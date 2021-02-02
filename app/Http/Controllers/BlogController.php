@@ -12,12 +12,16 @@ class BlogController extends Controller
         
     public function index()
     {
-        // \DB::enableQueryLog();
         $posts = Post::with('author')
                     ->latestFirst()
                     ->published()
                     ->simplePaginate($this->limit);
         return view('blog.index', compact('posts'));
-        // dd(\DB::getQueryLog());
+    }
+
+    public function show($id)
+    {
+        $post = Post::findOrFail($id);
+        return view("blog.show", compact('post'));
     }
 }
