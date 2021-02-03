@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CategoryTableSeeder extends Seeder
+class CategoriesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -37,7 +37,7 @@ class CategoryTableSeeder extends Seeder
         ]);
 
         //update post data
-        for ($post_id = 1; $post_id <= 10; $post_id++)
+        for ($post_id = 1; $post_id <= 20; $post_id++)
         {
             $category_id = rand(1, 5);
             
