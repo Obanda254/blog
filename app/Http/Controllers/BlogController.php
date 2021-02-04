@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
 use App\Category;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -35,6 +36,20 @@ class BlogController extends Controller
         return view('blog.index', compact('posts', 'categoryName'));
 
         // dd(\DB::getQueryLog());
+    }
+
+    public function author(User $author)
+    {
+        $authorName = $author->name;
+
+        $posts = $author->posts()
+                        ->with('category')
+                        ->latestFirst()
+                        ->published()
+                        ->simplePaginate($this->limit);
+
+        return view("blog.index", compact('posts', 'authorName'));
+
     }
 
     public function show(Post $post)
