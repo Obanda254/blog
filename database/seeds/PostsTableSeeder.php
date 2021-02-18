@@ -16,12 +16,12 @@ class PostsTableSeeder extends Seeder
         // reset the post table
         DB::table('posts')->truncate();
 
-        // generate 10 dummy posts data
+        // generate 40 dummy posts data
         $posts = [];
         $faker = Factory::create();
-        $date = Carbon::create(2021, 1, 15, 9);
+        $date = Carbon::create(2021, 2, 3, 9);
 
-        for ($i = 1; $i <= 20; $i++)
+        for ($i = 1; $i <= 40; $i++)
         {
             $image = "Post_Image_" . rand(1, 5) . ".jpg";
             $date->addDays(1);

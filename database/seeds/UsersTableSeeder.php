@@ -35,9 +35,9 @@ class UsersTableSeeder extends Seeder
                 'bio' => $faker->text(rand(250, 300))
             ],
             [
-                'name' => "Edo Daga",
-                'slug' => 'edu-daga',
-                'email' => "edo@test.com",
+                'name' => "Nigel Wak",
+                'slug' => 'wak-nigel',
+                'email' => "waknigel@gmail.com",
                 'password' => bcrypt('secret'),
                 'bio' => $faker->text(rand(250, 300))
             ],

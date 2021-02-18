@@ -26,7 +26,6 @@ class BlogController extends Controller
     {
         $categoryName = $category->title;
 
-        // \DB::enableQueryLog();
         $posts = $category->posts()
                           ->with('author')
                           ->latestFirst()
@@ -35,7 +34,6 @@ class BlogController extends Controller
 
         return view('blog.index', compact('posts', 'categoryName'));
 
-        // dd(\DB::getQueryLog());
     }
 
     public function author(User $author)

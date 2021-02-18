@@ -37,7 +37,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
 
         //update post data
-        for ($post_id = 1; $post_id <= 20; $post_id++)
+        for ($post_id = 1; $post_id <= 40; $post_id++)
         {
             $category_id = rand(1, 5);
             
